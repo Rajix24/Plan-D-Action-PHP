@@ -9,9 +9,9 @@ $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
 function getOne($var, $conn) {
-    $sql = "SELECT id, username, email FROM users";
+    $sql = "SELECT id, username, email FROM users WHERE id = ?";
     $stmt = $conn->prepare($sql);
-    $stmt->execute();
+    $stmt->execute([$var]);
     $data = $stmt->fetch(PDO::FETCH_ASSOC);
     return $data;
 }   
