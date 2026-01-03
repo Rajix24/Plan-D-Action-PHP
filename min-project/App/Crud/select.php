@@ -14,4 +14,4 @@ function getOne($var, $conn) {
     $stmt->execute();
     $data = $stmt->fetch(PDO::FETCH_ASSOC);
     return $data;
-}
+}   
